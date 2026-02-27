@@ -15,7 +15,9 @@ public sealed record ChartRichRelationalModel : IChartRichRelationalModel
             (richModel as IChartRelationalModel).Description,
             richModel.TypeId,
             richModel.Type,
+            richModel.XAxisId,
             richModel.XAxis,
+            richModel.YAxisId,
             richModel.YAxis,
             richModel.Series
         )
@@ -27,7 +29,9 @@ public sealed record ChartRichRelationalModel : IChartRichRelationalModel
         IString description,
         IGuid typeId,
         IChartType type,
+        IGuid xAxisId,
         IAxis xAxis,
+        IGuid yAxisId,
         IAxis yAxis,
         IEnumerable<ISeries> series
     )
@@ -37,7 +41,9 @@ public sealed record ChartRichRelationalModel : IChartRichRelationalModel
         Description = description;
         TypeId = typeId;
         Type = type;
+        XAxisId = xAxisId;
         XAxis = xAxis;
+        YAxisId = yAxisId;
         YAxis = yAxis;
         Series = series;
     }
@@ -52,7 +58,11 @@ public sealed record ChartRichRelationalModel : IChartRichRelationalModel
 
     public IChartType Type { get; }
 
+    public IGuid XAxisId { get; }
+
     public IAxis XAxis { get; }
+
+    public IGuid YAxisId { get; }
 
     public IAxis YAxis { get; }
 
