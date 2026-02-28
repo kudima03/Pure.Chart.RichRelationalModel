@@ -32,4 +32,22 @@ public sealed record ChartTypeRichRelationalModelTests
 
         Assert.Equal(name.TextValue, model.Name.TextValue);
     }
+
+    [Fact]
+    public void InitializesIdCorrectlyByCopyCtor()
+    {
+        IChartTypeRichRelationalModel source = new ChartTypeRichRelationalModel(new Guid(), new RandomString());
+        IChartTypeRichRelationalModel copy = new ChartTypeRichRelationalModel(source);
+
+        Assert.Equal(source.Id.GuidValue, copy.Id.GuidValue);
+    }
+
+    [Fact]
+    public void InitializesNameCorrectlyByCopyCtor()
+    {
+        IChartTypeRichRelationalModel source = new ChartTypeRichRelationalModel(new Guid(), new RandomString());
+        IChartTypeRelationalModel copy = new ChartTypeRichRelationalModel(source);
+
+        Assert.Equal(((IChartTypeRelationalModel)source).Name.TextValue, copy.Name.TextValue);
+    }
 }
