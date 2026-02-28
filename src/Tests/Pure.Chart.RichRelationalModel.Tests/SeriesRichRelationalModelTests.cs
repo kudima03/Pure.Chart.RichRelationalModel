@@ -83,4 +83,49 @@ public sealed record SeriesRichRelationalModelTests
 
         Assert.Equal(source.TextValue, model.YAxisSource.TextValue);
     }
+
+    [Fact]
+    public void InitializesIdCorrectlyByCopyCtor()
+    {
+        ISeriesRichRelationalModel source = new SeriesRichRelationalModel(new Guid(), new Guid(), new RandomString(), new RandomString(), new RandomString());
+        ISeriesRichRelationalModel copy = new SeriesRichRelationalModel(source);
+
+        Assert.Equal(source.Id.GuidValue, copy.Id.GuidValue);
+    }
+
+    [Fact]
+    public void InitializesChartIdCorrectlyByCopyCtor()
+    {
+        ISeriesRichRelationalModel source = new SeriesRichRelationalModel(new Guid(), new Guid(), new RandomString(), new RandomString(), new RandomString());
+        ISeriesRichRelationalModel copy = new SeriesRichRelationalModel(source);
+
+        Assert.Equal(source.ChartId.GuidValue, copy.ChartId.GuidValue);
+    }
+
+    [Fact]
+    public void InitializesLegendCorrectlyByCopyCtor()
+    {
+        ISeriesRichRelationalModel source = new SeriesRichRelationalModel(new Guid(), new Guid(), new RandomString(), new RandomString(), new RandomString());
+        ISeriesRelationalModel copy = new SeriesRichRelationalModel(source);
+
+        Assert.Equal(((ISeriesRelationalModel)source).Legend.TextValue, copy.Legend.TextValue);
+    }
+
+    [Fact]
+    public void InitializesXAxisSourceCorrectlyByCopyCtor()
+    {
+        ISeriesRichRelationalModel source = new SeriesRichRelationalModel(new Guid(), new Guid(), new RandomString(), new RandomString(), new RandomString());
+        ISeriesRelationalModel copy = new SeriesRichRelationalModel(source);
+
+        Assert.Equal(((ISeriesRelationalModel)source).XAxisSource.TextValue, copy.XAxisSource.TextValue);
+    }
+
+    [Fact]
+    public void InitializesYAxisSourceCorrectlyByCopyCtor()
+    {
+        ISeriesRichRelationalModel source = new SeriesRichRelationalModel(new Guid(), new Guid(), new RandomString(), new RandomString(), new RandomString());
+        ISeriesRelationalModel copy = new SeriesRichRelationalModel(source);
+
+        Assert.Equal(((ISeriesRelationalModel)source).YAxisSource.TextValue, copy.YAxisSource.TextValue);
+    }
 }
