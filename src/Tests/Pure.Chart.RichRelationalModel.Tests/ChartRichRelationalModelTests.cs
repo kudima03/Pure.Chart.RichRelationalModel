@@ -258,4 +258,209 @@ public sealed record ChartRichRelationalModelTests
 
         Assert.Equal(series, model.Series);
     }
+
+    [Fact]
+    public void InitializesIdCorrectlyByCopyCtor()
+    {
+        IChartRichRelationalModel source = new ChartRichRelationalModel(
+            new Guid(),
+            new RandomString(),
+            new RandomString(),
+            new Guid(),
+            new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
+            new Guid(),
+            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new Guid(),
+            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            []
+        );
+        IChartRichRelationalModel copy = new ChartRichRelationalModel(source);
+
+        Assert.Equal(source.Id.GuidValue, copy.Id.GuidValue);
+    }
+
+    [Fact]
+    public void InitializesTitleCorrectlyByCopyCtor()
+    {
+        IChartRichRelationalModel source = new ChartRichRelationalModel(
+            new Guid(),
+            new RandomString(),
+            new RandomString(),
+            new Guid(),
+            new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
+            new Guid(),
+            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new Guid(),
+            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            []
+        );
+        IChartRelationalModel copy = new ChartRichRelationalModel(source);
+
+        Assert.Equal(((IChartRelationalModel)source).Title.TextValue, copy.Title.TextValue);
+    }
+
+    [Fact]
+    public void InitializesDescriptionCorrectlyByCopyCtor()
+    {
+        IChartRichRelationalModel source = new ChartRichRelationalModel(
+            new Guid(),
+            new RandomString(),
+            new RandomString(),
+            new Guid(),
+            new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
+            new Guid(),
+            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new Guid(),
+            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            []
+        );
+        IChartRelationalModel copy = new ChartRichRelationalModel(source);
+
+        Assert.Equal(((IChartRelationalModel)source).Description.TextValue, copy.Description.TextValue);
+    }
+
+    [Fact]
+    public void InitializesTypeIdCorrectlyByCopyCtor()
+    {
+        IChartRichRelationalModel source = new ChartRichRelationalModel(
+            new Guid(),
+            new RandomString(),
+            new RandomString(),
+            new Guid(),
+            new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
+            new Guid(),
+            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new Guid(),
+            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            []
+        );
+        IChartRichRelationalModel copy = new ChartRichRelationalModel(source);
+
+        Assert.Equal(source.TypeId.GuidValue, copy.TypeId.GuidValue);
+    }
+
+    [Fact]
+    public void InitializesTypeCorrectlyByCopyCtor()
+    {
+        IChartRichRelationalModel source = new ChartRichRelationalModel(
+            new Guid(),
+            new RandomString(),
+            new RandomString(),
+            new Guid(),
+            new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
+            new Guid(),
+            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new Guid(),
+            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            []
+        );
+        IChart copy = new ChartRichRelationalModel(source);
+
+        Assert.Equal(source.Type.Name.TextValue, copy.Type.Name.TextValue);
+    }
+
+    [Fact]
+    public void InitializesXAxisIdCorrectlyByCopyCtor()
+    {
+        IChartRichRelationalModel source = new ChartRichRelationalModel(
+            new Guid(),
+            new RandomString(),
+            new RandomString(),
+            new Guid(),
+            new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
+            new Guid(),
+            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new Guid(),
+            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            []
+        );
+        IChartRichRelationalModel copy = new ChartRichRelationalModel(source);
+
+        Assert.Equal(source.XAxisId.GuidValue, copy.XAxisId.GuidValue);
+    }
+
+    [Fact]
+    public void InitializesXAxisCorrectlyByCopyCtor()
+    {
+        IChartRichRelationalModel source = new ChartRichRelationalModel(
+            new Guid(),
+            new RandomString(),
+            new RandomString(),
+            new Guid(),
+            new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
+            new Guid(),
+            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new Guid(),
+            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            []
+        );
+        IChart copy = new ChartRichRelationalModel(source);
+
+        Assert.Equal(source.XAxis.Legend.TextValue, copy.XAxis.Legend.TextValue);
+    }
+
+    [Fact]
+    public void InitializesYAxisIdCorrectlyByCopyCtor()
+    {
+        IChartRichRelationalModel source = new ChartRichRelationalModel(
+            new Guid(),
+            new RandomString(),
+            new RandomString(),
+            new Guid(),
+            new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
+            new Guid(),
+            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new Guid(),
+            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            []
+        );
+        IChartRichRelationalModel copy = new ChartRichRelationalModel(source);
+
+        Assert.Equal(source.YAxisId.GuidValue, copy.YAxisId.GuidValue);
+    }
+
+    [Fact]
+    public void InitializesYAxisCorrectlyByCopyCtor()
+    {
+        IChartRichRelationalModel source = new ChartRichRelationalModel(
+            new Guid(),
+            new RandomString(),
+            new RandomString(),
+            new Guid(),
+            new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
+            new Guid(),
+            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new Guid(),
+            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            []
+        );
+        IChart copy = new ChartRichRelationalModel(source);
+
+        Assert.Equal(source.YAxis.Legend.TextValue, copy.YAxis.Legend.TextValue);
+    }
+
+    [Fact]
+    public void InitializesSeriesCorrectlyByCopyCtor()
+    {
+        ISeries[] series =
+        [
+            new SeriesRichRelationalModel(new Guid(), new Guid(), new RandomString(), new RandomString(), new RandomString()),
+            new SeriesRichRelationalModel(new Guid(), new Guid(), new RandomString(), new RandomString(), new RandomString()),
+        ];
+        IChartRichRelationalModel source = new ChartRichRelationalModel(
+            new Guid(),
+            new RandomString(),
+            new RandomString(),
+            new Guid(),
+            new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
+            new Guid(),
+            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new Guid(),
+            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            series
+        );
+        IChart copy = new ChartRichRelationalModel(source);
+
+        Assert.Equal(source.Series, copy.Series);
+    }
 }
