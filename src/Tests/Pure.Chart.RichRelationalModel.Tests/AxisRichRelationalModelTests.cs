@@ -47,4 +47,31 @@ public sealed record AxisRichRelationalModelTests
 
         Assert.Equal(legend.TextValue, model.Legend.TextValue);
     }
+
+    [Fact]
+    public void InitializesIdCorrectlyByCopyCtor()
+    {
+        IAxisRichRelationalModel source = new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString());
+        IAxisRichRelationalModel copy = new AxisRichRelationalModel(source);
+
+        Assert.Equal(source.Id.GuidValue, copy.Id.GuidValue);
+    }
+
+    [Fact]
+    public void InitializesChartIdCorrectlyByCopyCtor()
+    {
+        IAxisRichRelationalModel source = new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString());
+        IAxisRichRelationalModel copy = new AxisRichRelationalModel(source);
+
+        Assert.Equal(source.ChartId.GuidValue, copy.ChartId.GuidValue);
+    }
+
+    [Fact]
+    public void InitializesLegendCorrectlyByCopyCtor()
+    {
+        IAxisRichRelationalModel source = new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString());
+        IAxisRelationalModel copy = new AxisRichRelationalModel(source);
+
+        Assert.Equal(((IAxisRelationalModel)source).Legend.TextValue, copy.Legend.TextValue);
+    }
 }
