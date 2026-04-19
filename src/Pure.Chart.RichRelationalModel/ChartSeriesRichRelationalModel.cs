@@ -5,19 +5,19 @@ using Pure.Primitives.Abstractions.String;
 
 namespace Pure.Chart.RichRelationalModel;
 
-public sealed record SeriesRichRelationalModel : ISeriesRichRelationalModel
+public sealed record ChartSeriesRichRelationalModel : IChartSeriesRichRelationalModel
 {
-    public SeriesRichRelationalModel(ISeriesRichRelationalModel richModel)
+    public ChartSeriesRichRelationalModel(IChartSeriesRichRelationalModel richModel)
         : this(
             richModel.Id,
             richModel.ChartId,
-            (richModel as ISeriesRelationalModel).Legend,
-            (richModel as ISeriesRelationalModel).XAxisSource,
-            (richModel as ISeriesRelationalModel).YAxisSource
+            (richModel as IChartSeriesRelationalModel).Legend,
+            (richModel as IChartSeriesRelationalModel).XAxisSource,
+            (richModel as IChartSeriesRelationalModel).YAxisSource
         )
     { }
 
-    public SeriesRichRelationalModel(
+    public ChartSeriesRichRelationalModel(
         IGuid id,
         IGuid chartId,
         IString legend,

@@ -33,7 +33,7 @@ public sealed record ChartRichRelationalModel : IChartRichRelationalModel
         IAxis xAxis,
         IGuid yAxisId,
         IAxis yAxis,
-        IEnumerable<ISeries> series
+        IEnumerable<IChartSeries> series
     )
     {
         Id = id;
@@ -66,5 +66,5 @@ public sealed record ChartRichRelationalModel : IChartRichRelationalModel
 
     public IAxis YAxis { get; }
 
-    public IEnumerable<ISeries> Series { get; }
+    public IEnumerable<IChartSeries> Series { get; }
 }
