@@ -226,16 +226,16 @@ public sealed record ChartRichRelationalModelTests
     [Fact]
     public void InitializeSeriesCorrectly()
     {
-        IReadOnlyCollection<ISeries> series =
+        IReadOnlyCollection<IChartSeries> series =
         [
-            new SeriesRichRelationalModel(
+            new ChartSeriesRichRelationalModel(
                 new Guid(),
                 new Guid(),
                 new RandomString(),
                 new RandomString(),
                 new RandomString()
             ),
-            new SeriesRichRelationalModel(
+            new ChartSeriesRichRelationalModel(
                 new Guid(),
                 new Guid(),
                 new RandomString(),
@@ -296,7 +296,10 @@ public sealed record ChartRichRelationalModelTests
         );
         IChartRelationalModel copy = new ChartRichRelationalModel(source);
 
-        Assert.Equal(((IChartRelationalModel)source).Title.TextValue, copy.Title.TextValue);
+        Assert.Equal(
+            ((IChartRelationalModel)source).Title.TextValue,
+            copy.Title.TextValue
+        );
     }
 
     [Fact]
@@ -316,7 +319,10 @@ public sealed record ChartRichRelationalModelTests
         );
         IChartRelationalModel copy = new ChartRichRelationalModel(source);
 
-        Assert.Equal(((IChartRelationalModel)source).Description.TextValue, copy.Description.TextValue);
+        Assert.Equal(
+            ((IChartRelationalModel)source).Description.TextValue,
+            copy.Description.TextValue
+        );
     }
 
     [Fact]
@@ -442,10 +448,22 @@ public sealed record ChartRichRelationalModelTests
     [Fact]
     public void InitializesSeriesCorrectlyByCopyCtor()
     {
-        ISeries[] series =
+        IEnumerable<IChartSeries> series =
         [
-            new SeriesRichRelationalModel(new Guid(), new Guid(), new RandomString(), new RandomString(), new RandomString()),
-            new SeriesRichRelationalModel(new Guid(), new Guid(), new RandomString(), new RandomString(), new RandomString()),
+            new ChartSeriesRichRelationalModel(
+                new Guid(),
+                new Guid(),
+                new RandomString(),
+                new RandomString(),
+                new RandomString()
+            ),
+            new ChartSeriesRichRelationalModel(
+                new Guid(),
+                new Guid(),
+                new RandomString(),
+                new RandomString(),
+                new RandomString()
+            ),
         ];
         IChartRichRelationalModel source = new ChartRichRelationalModel(
             new Guid(),

@@ -51,7 +51,11 @@ public sealed record AxisRichRelationalModelTests
     [Fact]
     public void InitializesIdCorrectlyByCopyCtor()
     {
-        IAxisRichRelationalModel source = new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString());
+        IAxisRichRelationalModel source = new AxisRichRelationalModel(
+            new Guid(),
+            new Guid(),
+            new RandomString()
+        );
         IAxisRichRelationalModel copy = new AxisRichRelationalModel(source);
 
         Assert.Equal(source.Id.GuidValue, copy.Id.GuidValue);
@@ -60,7 +64,11 @@ public sealed record AxisRichRelationalModelTests
     [Fact]
     public void InitializesChartIdCorrectlyByCopyCtor()
     {
-        IAxisRichRelationalModel source = new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString());
+        IAxisRichRelationalModel source = new AxisRichRelationalModel(
+            new Guid(),
+            new Guid(),
+            new RandomString()
+        );
         IAxisRichRelationalModel copy = new AxisRichRelationalModel(source);
 
         Assert.Equal(source.ChartId.GuidValue, copy.ChartId.GuidValue);
@@ -69,9 +77,16 @@ public sealed record AxisRichRelationalModelTests
     [Fact]
     public void InitializesLegendCorrectlyByCopyCtor()
     {
-        IAxisRichRelationalModel source = new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString());
+        IAxisRichRelationalModel source = new AxisRichRelationalModel(
+            new Guid(),
+            new Guid(),
+            new RandomString()
+        );
         IAxisRelationalModel copy = new AxisRichRelationalModel(source);
 
-        Assert.Equal(((IAxisRelationalModel)source).Legend.TextValue, copy.Legend.TextValue);
+        Assert.Equal(
+            ((IAxisRelationalModel)source).Legend.TextValue,
+            copy.Legend.TextValue
+        );
     }
 }
