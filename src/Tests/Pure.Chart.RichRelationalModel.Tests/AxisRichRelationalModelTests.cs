@@ -15,7 +15,6 @@ public sealed record AxisRichRelationalModelTests
         IGuid guid = new Guid();
         IAxisRichRelationalModel model = new AxisRichRelationalModel(
             guid,
-            new Guid(),
             new RandomString()
         );
 
@@ -23,27 +22,10 @@ public sealed record AxisRichRelationalModelTests
     }
 
     [Fact]
-    public void InitializeChartIdCorrectly()
-    {
-        IGuid guid = new Guid();
-        IAxisRichRelationalModel model = new AxisRichRelationalModel(
-            new Guid(),
-            guid,
-            new RandomString()
-        );
-
-        Assert.Equal(guid.GuidValue, model.ChartId.GuidValue);
-    }
-
-    [Fact]
     public void InitializeLegendCorrectly()
     {
         IString legend = new RandomString();
-        IAxisRelationalModel model = new AxisRichRelationalModel(
-            new Guid(),
-            new Guid(),
-            legend
-        );
+        IAxisRelationalModel model = new AxisRichRelationalModel(new Guid(), legend);
 
         Assert.Equal(legend.TextValue, model.Legend.TextValue);
     }
@@ -53,7 +35,6 @@ public sealed record AxisRichRelationalModelTests
     {
         IAxisRichRelationalModel source = new AxisRichRelationalModel(
             new Guid(),
-            new Guid(),
             new RandomString()
         );
         IAxisRichRelationalModel copy = new AxisRichRelationalModel(source);
@@ -62,23 +43,9 @@ public sealed record AxisRichRelationalModelTests
     }
 
     [Fact]
-    public void InitializesChartIdCorrectlyByCopyCtor()
-    {
-        IAxisRichRelationalModel source = new AxisRichRelationalModel(
-            new Guid(),
-            new Guid(),
-            new RandomString()
-        );
-        IAxisRichRelationalModel copy = new AxisRichRelationalModel(source);
-
-        Assert.Equal(source.ChartId.GuidValue, copy.ChartId.GuidValue);
-    }
-
-    [Fact]
     public void InitializesLegendCorrectlyByCopyCtor()
     {
         IAxisRichRelationalModel source = new AxisRichRelationalModel(
-            new Guid(),
             new Guid(),
             new RandomString()
         );
