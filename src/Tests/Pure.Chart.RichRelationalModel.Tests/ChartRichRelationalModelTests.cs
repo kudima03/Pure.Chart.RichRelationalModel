@@ -21,9 +21,9 @@ public sealed record ChartRichRelationalModelTests
             new Guid(),
             new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             []
         );
 
@@ -41,9 +41,9 @@ public sealed record ChartRichRelationalModelTests
             new Guid(),
             new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             []
         );
 
@@ -61,9 +61,9 @@ public sealed record ChartRichRelationalModelTests
             new Guid(),
             new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             []
         );
 
@@ -81,9 +81,9 @@ public sealed record ChartRichRelationalModelTests
             guid,
             new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             []
         );
 
@@ -104,9 +104,9 @@ public sealed record ChartRichRelationalModelTests
             new Guid(),
             type,
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             []
         );
 
@@ -124,9 +124,9 @@ public sealed record ChartRichRelationalModelTests
             new Guid(),
             new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
             guid,
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             []
         );
 
@@ -137,7 +137,6 @@ public sealed record ChartRichRelationalModelTests
     public void InitializeXAxisCorrectly()
     {
         IAxisRichRelationalModel xAxis = new AxisRichRelationalModel(
-            new Guid(),
             new Guid(),
             new RandomString()
         );
@@ -150,7 +149,7 @@ public sealed record ChartRichRelationalModelTests
             new Guid(),
             xAxis,
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             []
         );
 
@@ -158,10 +157,7 @@ public sealed record ChartRichRelationalModelTests
             xAxis.Id.GuidValue,
             ((IAxisRichRelationalModel)model.XAxis).Id.GuidValue
         );
-        Assert.Equal(
-            xAxis.ChartId.GuidValue,
-            ((IAxisRichRelationalModel)model.XAxis).ChartId.GuidValue
-        );
+
         Assert.Equal(
             ((IAxisRelationalModel)xAxis).Legend.TextValue,
             ((IAxisRelationalModel)model.XAxis).Legend.TextValue
@@ -179,9 +175,9 @@ public sealed record ChartRichRelationalModelTests
             new Guid(),
             new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             guid,
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             []
         );
 
@@ -193,7 +189,6 @@ public sealed record ChartRichRelationalModelTests
     {
         IAxisRichRelationalModel yAxis = new AxisRichRelationalModel(
             new Guid(),
-            new Guid(),
             new RandomString()
         );
         IChart model = new ChartRichRelationalModel(
@@ -203,7 +198,7 @@ public sealed record ChartRichRelationalModelTests
             new Guid(),
             new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
             yAxis,
             []
@@ -213,10 +208,7 @@ public sealed record ChartRichRelationalModelTests
             yAxis.Id.GuidValue,
             ((IAxisRichRelationalModel)model.YAxis).Id.GuidValue
         );
-        Assert.Equal(
-            yAxis.ChartId.GuidValue,
-            ((IAxisRichRelationalModel)model.YAxis).ChartId.GuidValue
-        );
+
         Assert.Equal(
             ((IAxisRelationalModel)yAxis).Legend.TextValue,
             ((IAxisRelationalModel)model.YAxis).Legend.TextValue
@@ -250,9 +242,9 @@ public sealed record ChartRichRelationalModelTests
             new Guid(),
             new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             series
         );
 
@@ -269,9 +261,9 @@ public sealed record ChartRichRelationalModelTests
             new Guid(),
             new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             []
         );
         IChartRichRelationalModel copy = new ChartRichRelationalModel(source);
@@ -289,9 +281,9 @@ public sealed record ChartRichRelationalModelTests
             new Guid(),
             new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             []
         );
         IChartRelationalModel copy = new ChartRichRelationalModel(source);
@@ -312,9 +304,9 @@ public sealed record ChartRichRelationalModelTests
             new Guid(),
             new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             []
         );
         IChartRelationalModel copy = new ChartRichRelationalModel(source);
@@ -335,9 +327,9 @@ public sealed record ChartRichRelationalModelTests
             new Guid(),
             new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             []
         );
         IChartRichRelationalModel copy = new ChartRichRelationalModel(source);
@@ -355,9 +347,9 @@ public sealed record ChartRichRelationalModelTests
             new Guid(),
             new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             []
         );
         IChart copy = new ChartRichRelationalModel(source);
@@ -375,9 +367,9 @@ public sealed record ChartRichRelationalModelTests
             new Guid(),
             new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             []
         );
         IChartRichRelationalModel copy = new ChartRichRelationalModel(source);
@@ -395,9 +387,9 @@ public sealed record ChartRichRelationalModelTests
             new Guid(),
             new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             []
         );
         IChart copy = new ChartRichRelationalModel(source);
@@ -415,9 +407,9 @@ public sealed record ChartRichRelationalModelTests
             new Guid(),
             new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             []
         );
         IChartRichRelationalModel copy = new ChartRichRelationalModel(source);
@@ -435,9 +427,9 @@ public sealed record ChartRichRelationalModelTests
             new Guid(),
             new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             []
         );
         IChart copy = new ChartRichRelationalModel(source);
@@ -472,9 +464,9 @@ public sealed record ChartRichRelationalModelTests
             new Guid(),
             new ChartTypeRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             new Guid(),
-            new AxisRichRelationalModel(new Guid(), new Guid(), new RandomString()),
+            new AxisRichRelationalModel(new Guid(), new RandomString()),
             series
         );
         IChart copy = new ChartRichRelationalModel(source);
