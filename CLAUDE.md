@@ -15,6 +15,8 @@ dotnet format && csharpier format .                           # auto-fix code st
 dotnet pack --configuration Release -p:Version=<version> --output .
 ```
 
+CI additionally passes `-p:AssemblyVersion` (pinned to the major) and `-p:FileVersion`; see `.github/workflows/publish-nuget.yml`.
+
 ## Architecture
 
 This is a **sealed-record NuGet library** — four concrete implementations, no abstractions defined here, no executables.
