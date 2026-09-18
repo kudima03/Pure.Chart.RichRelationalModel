@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="Tests/Pure.Chart.RichRelationalModel.Tests/Pure.Chart.RichRelationalModel.Tests.csproj" />
+  </Folder>
+  <Project Path="Pure.Chart.RichRelationalModel/Pure.Chart.RichRelationalModel.csproj" />
+</Solution>
