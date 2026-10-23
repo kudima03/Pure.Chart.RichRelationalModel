@@ -13,7 +13,8 @@ public sealed record ChartSeriesRichRelationalModel : IChartSeriesRichRelational
             richModel.ChartId,
             (richModel as IChartSeriesRelationalModel).Legend,
             (richModel as IChartSeriesRelationalModel).XAxisSource,
-            (richModel as IChartSeriesRelationalModel).YAxisSource
+            (richModel as IChartSeriesRelationalModel).YAxisSource,
+            (richModel as IChartSeriesRelationalModel).LineType
         )
     { }
 
@@ -22,7 +23,8 @@ public sealed record ChartSeriesRichRelationalModel : IChartSeriesRichRelational
         IGuid chartId,
         IString legend,
         IString xAxisSource,
-        IString yAxisSource
+        IString yAxisSource,
+        IString lineType
     )
     {
         Id = id;
@@ -30,6 +32,7 @@ public sealed record ChartSeriesRichRelationalModel : IChartSeriesRichRelational
         Legend = legend;
         XAxisSource = xAxisSource;
         YAxisSource = yAxisSource;
+        LineType = lineType;
     }
 
     public IGuid Id { get; }
@@ -41,4 +44,6 @@ public sealed record ChartSeriesRichRelationalModel : IChartSeriesRichRelational
     public IString XAxisSource { get; }
 
     public IString YAxisSource { get; }
+
+    public IString LineType { get; }
 }

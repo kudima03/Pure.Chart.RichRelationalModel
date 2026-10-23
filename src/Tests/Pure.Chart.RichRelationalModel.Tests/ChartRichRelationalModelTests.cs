@@ -225,11 +225,13 @@ public sealed record ChartRichRelationalModelTests
                 new Guid(),
                 new RandomString(),
                 new RandomString(),
+                new RandomString(),
                 new RandomString()
             ),
             new ChartSeriesRichRelationalModel(
                 new Guid(),
                 new Guid(),
+                new RandomString(),
                 new RandomString(),
                 new RandomString(),
                 new RandomString()
@@ -447,11 +449,13 @@ public sealed record ChartRichRelationalModelTests
                 new Guid(),
                 new RandomString(),
                 new RandomString(),
+                new RandomString(),
                 new RandomString()
             ),
             new ChartSeriesRichRelationalModel(
                 new Guid(),
                 new Guid(),
+                new RandomString(),
                 new RandomString(),
                 new RandomString(),
                 new RandomString()
