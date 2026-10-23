@@ -6,6 +6,24 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.1.0-preview.4.0.0] — 2026-10-23
+
+### Changed
+
+- **`ChartSeriesRichRelationalModel`** now exposes a `LineType` property. The
+  primary constructor takes an additional `IString lineType` parameter after
+  `yAxisSource`, and the copy constructor carries `LineType` over from the
+  source model. Requires `Pure.Chart.RichRelationalModel.Abstractions`
+  0.1.0-preview.5.0.0.
+
+### Added
+
+- The package README is now included in the NuGet package.
+
+### Fixed
+
+- Assembly versions are now stamped from the release tag.
+
 ## [0.1.0-preview.3.0.0] — 2026-04-26
 
 ### Removed
