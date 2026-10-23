@@ -25,7 +25,7 @@ This is a **sealed-record NuGet library** — four concrete implementations, no 
 
 - `ChartRichRelationalModel` — a chart that carries both FK identifiers (`TypeId`, `XAxisId`, `YAxisId`) and their fully resolved navigation objects (`Type`, `XAxis`, `YAxis`, `Series`).
 - `AxisRichRelationalModel` — a chart axis with its `Id` and `Legend`.
-- `ChartSeriesRichRelationalModel` — a chart series with its parent `ChartId`, `Legend`, and axis source column names.
+- `ChartSeriesRichRelationalModel` — a chart series with its parent `ChartId`, `Legend`, axis source column names (`XAxisSource`, `YAxisSource`), and `LineType`.
 - `ChartTypeRichRelationalModel` — a chart type with its `Id` and `Name`.
 
 **Interface hierarchy:** each record implements a `IChart*RichRelationalModel` interface from `Pure.Chart.RichRelationalModel.Abstractions`, which itself composes two parent interfaces — one from `Pure.Chart.Model.Abstractions` (structural shape) and one from `Pure.Chart.RelationalModel.Abstractions` (relational FK properties). All primitive properties use the `IGuid` / `IString` contracts from `Pure.Primitives.Abstractions`.

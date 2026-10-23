@@ -18,6 +18,7 @@ public sealed record ChartSeriesRichRelationalModelTests
             new Guid(),
             new RandomString(),
             new RandomString(),
+            new RandomString(),
             new RandomString()
         );
 
@@ -31,6 +32,7 @@ public sealed record ChartSeriesRichRelationalModelTests
         IChartSeriesRichRelationalModel model = new ChartSeriesRichRelationalModel(
             new Guid(),
             guid,
+            new RandomString(),
             new RandomString(),
             new RandomString(),
             new RandomString()
@@ -48,6 +50,7 @@ public sealed record ChartSeriesRichRelationalModelTests
             new Guid(),
             legend,
             new RandomString(),
+            new RandomString(),
             new RandomString()
         );
 
@@ -63,6 +66,7 @@ public sealed record ChartSeriesRichRelationalModelTests
             new Guid(),
             new RandomString(),
             source,
+            new RandomString(),
             new RandomString()
         );
 
@@ -78,10 +82,27 @@ public sealed record ChartSeriesRichRelationalModelTests
             new Guid(),
             new RandomString(),
             new RandomString(),
-            source
+            source,
+            new RandomString()
         );
 
         Assert.Equal(source.TextValue, model.YAxisSource.TextValue);
+    }
+
+    [Fact]
+    public void InitializeLineTypeCorrectly()
+    {
+        IString lineType = new RandomString();
+        IChartSeriesRelationalModel model = new ChartSeriesRichRelationalModel(
+            new Guid(),
+            new Guid(),
+            new RandomString(),
+            new RandomString(),
+            new RandomString(),
+            lineType
+        );
+
+        Assert.Equal(lineType.TextValue, model.LineType.TextValue);
     }
 
     [Fact]
@@ -90,6 +111,7 @@ public sealed record ChartSeriesRichRelationalModelTests
         IChartSeriesRichRelationalModel source = new ChartSeriesRichRelationalModel(
             new Guid(),
             new Guid(),
+            new RandomString(),
             new RandomString(),
             new RandomString(),
             new RandomString()
@@ -107,6 +129,7 @@ public sealed record ChartSeriesRichRelationalModelTests
             new Guid(),
             new RandomString(),
             new RandomString(),
+            new RandomString(),
             new RandomString()
         );
         IChartSeriesRichRelationalModel copy = new ChartSeriesRichRelationalModel(source);
@@ -120,6 +143,7 @@ public sealed record ChartSeriesRichRelationalModelTests
         IChartSeriesRichRelationalModel source = new ChartSeriesRichRelationalModel(
             new Guid(),
             new Guid(),
+            new RandomString(),
             new RandomString(),
             new RandomString(),
             new RandomString()
@@ -140,6 +164,7 @@ public sealed record ChartSeriesRichRelationalModelTests
             new Guid(),
             new RandomString(),
             new RandomString(),
+            new RandomString(),
             new RandomString()
         );
         IChartSeriesRelationalModel copy = new ChartSeriesRichRelationalModel(source);
@@ -158,6 +183,7 @@ public sealed record ChartSeriesRichRelationalModelTests
             new Guid(),
             new RandomString(),
             new RandomString(),
+            new RandomString(),
             new RandomString()
         );
         IChartSeriesRelationalModel copy = new ChartSeriesRichRelationalModel(source);
@@ -165,6 +191,25 @@ public sealed record ChartSeriesRichRelationalModelTests
         Assert.Equal(
             ((IChartSeriesRelationalModel)source).YAxisSource.TextValue,
             copy.YAxisSource.TextValue
+        );
+    }
+
+    [Fact]
+    public void InitializesLineTypeCorrectlyByCopyCtor()
+    {
+        IChartSeriesRichRelationalModel source = new ChartSeriesRichRelationalModel(
+            new Guid(),
+            new Guid(),
+            new RandomString(),
+            new RandomString(),
+            new RandomString(),
+            new RandomString()
+        );
+        IChartSeriesRelationalModel copy = new ChartSeriesRichRelationalModel(source);
+
+        Assert.Equal(
+            ((IChartSeriesRelationalModel)source).LineType.TextValue,
+            copy.LineType.TextValue
         );
     }
 }

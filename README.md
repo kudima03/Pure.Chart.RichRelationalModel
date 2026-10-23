@@ -20,7 +20,7 @@ All types live in the `Pure.Chart.RichRelationalModel` namespace.
 |------|-----------|------------|
 | `ChartRichRelationalModel` | `IChartRichRelationalModel` | `Id`, `Title`, `Description`, `TypeId`, `Type`, `XAxisId`, `XAxis`, `YAxisId`, `YAxis`, `Series` |
 | `AxisRichRelationalModel` | `IAxisRichRelationalModel` | `Id`, `Legend` |
-| `ChartSeriesRichRelationalModel` | `IChartSeriesRichRelationalModel` | `Id`, `ChartId`, `Legend`, `XAxisSource`, `YAxisSource` |
+| `ChartSeriesRichRelationalModel` | `IChartSeriesRichRelationalModel` | `Id`, `ChartId`, `Legend`, `XAxisSource`, `YAxisSource`, `LineType` |
 | `ChartTypeRichRelationalModel` | `IChartTypeRichRelationalModel` | `Id`, `Name` |
 
 Each record provides two constructors:
@@ -35,7 +35,7 @@ Each record provides two constructors:
 
 ## Dependencies
 
-- [`Pure.Chart.RichRelationalModel.Abstractions`](https://github.com/kudima03/Pure.Chart.RichRelationalModel.Abstractions/tree/0.1.0-preview.4.0.0) — interface contracts for `IChartRichRelationalModel`, `IAxisRichRelationalModel`, `IChartSeriesRichRelationalModel`, and `IChartTypeRichRelationalModel`
+- [`Pure.Chart.RichRelationalModel.Abstractions`](https://github.com/kudima03/Pure.Chart.RichRelationalModel.Abstractions/tree/0.1.0-preview.5.0.0) — interface contracts for `IChartRichRelationalModel`, `IAxisRichRelationalModel`, `IChartSeriesRichRelationalModel`, and `IChartTypeRichRelationalModel`
 
 ## Target Frameworks
 
