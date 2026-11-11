@@ -32,13 +32,13 @@ This is a **sealed-record NuGet library** — four concrete implementations, no 
 
 **Constructor pattern:** every record has a full-parameter constructor and a copy constructor that accepts the corresponding interface — useful when adapting an incoming DTO without re-specifying each field.
 
-**Multi-targeting:** net7.0, net8.0, net9.0, net10.0. The library must remain AOT-compatible (`IsAotCompatible = true`).
+**Multi-targeting:** net7.0, net8.0, net9.0, net10.0, net11.0. The library must remain AOT-compatible (`IsAotCompatible = true`).
 
 **Package validation:** `EnablePackageValidation = true` with `PackageValidationBaselineVersion = 0.1.0-preview.4.0.0`. Breaking API changes fail the build.
 
 **Publishing:** triggered by pushing a semver tag (pattern `*.*.*`). The tag value becomes the `PackageVersion`.
 
-**Tests:** xUnit test project under `./src/Tests/Pure.Chart.RichRelationalModel.Tests/`, targeting net10.0. CI requires 99% line coverage and 99% mutation score (dotnet-stryker).
+**Tests:** xUnit test project under `./src/Tests/Pure.Chart.RichRelationalModel.Tests/`, targeting net11.0. CI requires 99% line coverage and 99% mutation score (dotnet-stryker).
 
 ## Code Style
 
