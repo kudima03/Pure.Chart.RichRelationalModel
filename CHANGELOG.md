@@ -6,6 +6,16 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.1.0-preview.4.1.0] — 2026-11-11
+
+### Added
+
+- Support for .NET 11 (`net11.0` target framework).
+
+### Changed
+
+- Updated `Pure.Chart.RichRelationalModel.Abstractions` to 0.1.0-preview.5.1.0.
+
 ## [0.1.0-preview.4.0.0] — 2026-10-23
 
 ### Changed
